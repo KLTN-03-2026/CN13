@@ -1,0 +1,355 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.Master.cs" Inherits="GPDH.Site" %>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <meta charset="utf-8" />
+    <title>Nhà thờ họ Nguyễn Việt Nam</title>
+    <link rel="stylesheet" href="Content/Site.css" />
+
+    <style>
+        body {
+            font-family: "Segoe UI", sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #fff;
+        }
+
+        .container {
+            display: flex;
+            min-height: 100vh;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 200px;
+            height: 100vh;
+            background-color: #f8e7c4;
+            padding: 20px 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            z-index: 2000;
+        }
+
+        .sidebar img {
+            width: 80px;
+            height: 80px;
+            margin-bottom: 10px;
+        }
+
+        .menu a {
+            display: block;
+            padding: 10px 20px;
+            color: #000;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .menu a:hover {
+            background-color: #d6b77d;
+            color: #fff;
+        }
+
+        /* Main content */
+        .main-content {
+    margin-left: 200px;
+    padding: 20px 40px;
+    flex: 1;
+    box-sizing: border-box;
+    text-align: center;
+    overflow: visible !important;     /* ⭐ CHO SUBMENU TRÀN TỰ DO */
+    position: relative;                /* ⭐ ĐỂ Z-INDEX HOẠT ĐỘNG */
+}
+
+
+        /* Chatbot */
+        #chatbot-icon {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            background-color: #c89b3c;
+            color: #fff;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 28px;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            transition: 0.3s;
+            z-index: 9999;
+        }
+
+        #chatbox {
+            position: fixed;
+            bottom: 100px;
+            right: 25px;
+            width: 320px;
+            background: #fff;
+            border: 2px solid #d6b77d;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            display: none;
+            flex-direction: column;
+            overflow: hidden;
+            font-family: "Segoe UI";
+            z-index: 9999;
+        }
+
+        #chatbot-icon:hover {
+            background-color: #a57923;
+        }
+
+        .chat-header {
+            background-color: #c89b3c;
+            color: white;
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .chat-header h4 {
+            margin: 0;
+            font-size: 15px;
+        }
+
+        .chat-header button {
+            background: transparent;
+            border: none;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .chat-body {
+            height: 250px;
+            padding: 10px;
+            overflow-y: auto;
+            background-color: #fffbea;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .bot-msg, .user-msg {
+            margin: 5px 0;
+            padding: 8px 12px;
+            border-radius: 12px;
+            max-width: 80%;
+            word-wrap: break-word;
+        }
+
+        .bot-msg {
+            background-color: #f8e7a0;
+            align-self: flex-start;
+        }
+
+        .user-msg {
+            background-color: #d6b77d;
+            color: #fff;
+            align-self: flex-end;
+        }
+
+        .chat-footer {
+            padding: 8px;
+            border-top: 1px solid #ddd;
+            background: #fff8dc;
+        }
+
+        .suggestions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 5px;
+        }
+
+        .suggestions button {
+            flex: 1;
+            background-color: #c89b3c;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            padding: 5px 6px;
+            cursor: pointer;
+            font-size: 12px;
+        }
+
+        .suggestions button:hover {
+            background-color: #a57923;
+        }
+
+        /* Submenu */
+        .submenu {
+    display: none;
+    position: absolute;
+    left: 200px;
+    top: 0;
+    background-color: #F5F5F5;
+    border: 1px solid #d6b77d;
+    box-shadow: 2px 2px 8px rgba(0,0,0,0.2);
+    border-radius: 6px;
+    padding: 5px 0;
+    z-index: 5000;     /* ⭐ submenu phải nổi cao nhất */
+    min-width: 180px;
+    white-space: nowrap;
+}
+
+
+        .submenu a {
+            display: block;
+            padding: 10px 18px;
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+        }
+
+        .submenu a:hover {
+            background-color: #d6b77d;
+            color: white;
+        }
+
+        .menu-item {
+            position: relative;
+            width: 100%;
+        }
+
+        .menu-item:hover .submenu {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <form id="form1" runat="server">
+        <div class="container">
+
+            <!-- Sidebar -->
+            <div class="sidebar">
+                <img src="Images/logo.png" alt="Logo" />
+                <div class="menu" id="menu" runat="server"></div>
+            </div>
+
+            <!-- Nội dung -->
+            <div class="main-content">
+                <asp:ContentPlaceHolder ID="MainContent" runat="server" />
+            </div>
+
+        </div>
+
+        <!-- Chatbox Icon -->
+<div id="chatbot-icon" onclick="toggleChatbox()">💬</div>
+
+<!-- Chatbox -->
+<div id="chatbox">
+    <div class="chat-header">
+        <h4>Trợ lý ảo họ Nguyễn</h4>
+        <button type="button" onclick="toggleChatbox()">✖</button>
+    </div>
+
+    <div class="chat-body" id="chat-body">
+        <div class="bot-msg">
+            Xin chào! Tôi là trợ lý ảo họ Nguyễn 👋<br />
+            Bạn cần giúp gì?
+        </div>
+    </div>
+
+    <div class="chat-footer">
+
+        <!-- Gợi ý câu hỏi -->
+        <div class="suggestions">
+            <button type="button" onclick="sendQuestion('Giới thiệu về dòng họ Nguyễn')">Giới thiệu</button>
+            <button type="button" onclick="sendQuestion('Làm sao để đăng nhập?')">Đăng nhập</button>
+            <button type="button" onclick="sendQuestion('Tôi quên mật khẩu rồi thì sao?')">Quên mật khẩu</button>
+        </div>
+
+        <!-- Ô nhập + nút gửi -->
+        <div style="display:flex; align-items:center; margin-top:8px;">
+            <input id="txtChat" type="text"
+                   placeholder="Aa..."
+                   style="flex:1; padding:10px; border-radius:20px; border:1px solid #ccc;" />
+
+            <button onclick="sendMessage()"
+                    style="margin-left:8px; border:none; background:none; font-size:22px; cursor:pointer;">
+                ⬆️
+            </button>
+        </div>
+    </div>
+</div>
+
+
+        <script>
+          function toggleChatbox() {
+    const box = document.getElementById('chatbox');
+    box.style.display = (box.style.display === 'flex') ? 'none' : 'flex';
+}
+
+
+// ====== Gửi câu hỏi từ nút gợi ý ======
+function sendQuestion(text) {
+    sendToChat(text);
+}
+
+
+// ====== Gửi tin nhắn từ ô nhập ======
+function sendMessage() {
+    let text = document.getElementById("txtChat").value.trim();
+    if (text === "") return;
+
+    sendToChat(text);
+    document.getElementById("txtChat").value = "";
+}
+
+
+// ====== Hàm gửi tin nhắn & gọi API ======
+function sendToChat(text) {
+
+    const chatBody = document.getElementById("chat-body");
+
+    // Hiển thị tin nhắn người dùng
+    chatBody.insertAdjacentHTML("beforeend",
+        `<div class="user-msg">${text}</div>`);
+
+    chatBody.scrollTop = chatBody.scrollHeight;
+
+    // Gọi API Gemini
+    fetch("GeminiAPI.aspx?q=" + encodeURIComponent(text))
+    .then(r => r.text())
+    .then(answer => {
+        chatBody.insertAdjacentHTML(
+            "beforeend",
+            `<div class="bot-msg">${answer}</div>`
+        );
+        chatBody.scrollTop = chatBody.scrollHeight;
+    })
+    .catch(() => {
+        chatBody.insertAdjacentHTML(
+            "beforeend",
+            `<div class="bot-msg">Không thể kết nối tới máy chủ AI.</div>`
+        );
+    });
+
+}
+
+
+// ====== Nhấn Enter để gửi ======
+document.addEventListener("DOMContentLoaded", function () {
+    const input = document.getElementById("txtChat");
+    if (!input) return;
+
+    input.addEventListener("keypress", function (e) {
+        if (e.key === "Enter") {
+            e.preventDefault();
+            sendMessage();
+        }
+    });
+});
+
+        </script>
+
+    </form>
+</body>
+</html>
