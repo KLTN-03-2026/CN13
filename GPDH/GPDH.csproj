@@ -64,9 +64,12 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="ChinhSuaThongTin.aspx" />
     <Content Include="DangNhap.aspx" />
     <Content Include="DangXuat.aspx" />
+    <Content Include="DoiMatKhau.aspx" />
     <Content Include="GeminiAPI.aspx" />
+    <Content Include="ThongTinCaNhan.aspx" />
     <Content Include="TrangChu.aspx" />
     <Content Include="Global.asax" />
     <Content Include="Web.config">
@@ -74,6 +77,13 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ChinhSuaThongTin.aspx.cs">
+      <DependentUpon>ChinhSuaThongTin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ChinhSuaThongTin.aspx.designer.cs">
+      <DependentUpon>ChinhSuaThongTin.aspx</DependentUpon>
+    </Compile>
     <Compile Include="DangNhap.aspx.cs">
       <DependentUpon>DangNhap.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -88,6 +98,13 @@
     <Compile Include="DangXuat.aspx.designer.cs">
       <DependentUpon>DangXuat.aspx</DependentUpon>
     </Compile>
+    <Compile Include="DoiMatKhau.aspx.cs">
+      <DependentUpon>DoiMatKhau.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DoiMatKhau.aspx.designer.cs">
+      <DependentUpon>DoiMatKhau.aspx</DependentUpon>
+    </Compile>
     <Compile Include="GeminiAPI.aspx.cs">
       <DependentUpon>GeminiAPI.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -101,6 +118,13 @@
     </Compile>
     <Compile Include="Site.Master.designer.cs">
       <DependentUpon>Site.Master</DependentUpon>
+    </Compile>
+    <Compile Include="ThongTinCaNhan.aspx.cs">
+      <DependentUpon>ThongTinCaNhan.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ThongTinCaNhan.aspx.designer.cs">
+      <DependentUpon>ThongTinCaNhan.aspx</DependentUpon>
     </Compile>
     <Compile Include="TrangChu.aspx.cs">
       <DependentUpon>TrangChu.aspx</DependentUpon>
