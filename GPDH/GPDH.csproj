@@ -64,12 +64,14 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="CayGiaPha.aspx" />
     <Content Include="ChinhSuaThongTin.aspx" />
     <Content Include="DangNhap.aspx" />
     <Content Include="DangXuat.aspx" />
     <Content Include="DoiMatKhau.aspx" />
     <Content Include="GeminiAPI.aspx" />
     <Content Include="ThongTinCaNhan.aspx" />
+    <Content Include="TimKiem.aspx" />
     <Content Include="TrangChu.aspx" />
     <Content Include="Global.asax" />
     <Content Include="Web.config">
@@ -77,6 +79,13 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CayGiaPha.aspx.cs">
+      <DependentUpon>CayGiaPha.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CayGiaPha.aspx.designer.cs">
+      <DependentUpon>CayGiaPha.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ChinhSuaThongTin.aspx.cs">
       <DependentUpon>ChinhSuaThongTin.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -125,6 +134,13 @@
     </Compile>
     <Compile Include="ThongTinCaNhan.aspx.designer.cs">
       <DependentUpon>ThongTinCaNhan.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TimKiem.aspx.cs">
+      <DependentUpon>TimKiem.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TimKiem.aspx.designer.cs">
+      <DependentUpon>TimKiem.aspx</DependentUpon>
     </Compile>
     <Compile Include="TrangChu.aspx.cs">
       <DependentUpon>TrangChu.aspx</DependentUpon>
