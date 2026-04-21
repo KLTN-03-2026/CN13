@@ -70,6 +70,9 @@
     <Content Include="DangXuat.aspx" />
     <Content Include="DoiMatKhau.aspx" />
     <Content Include="GeminiAPI.aspx" />
+    <Content Include="KhuVucThoTu.aspx" />
+    <Content Include="LichSu.aspx" />
+    <Content Include="NghiLe.aspx" />
     <Content Include="ThongTinCaNhan.aspx" />
     <Content Include="TimKiem.aspx" />
     <Content Include="TrangChu.aspx" />
@@ -120,6 +123,27 @@
     </Compile>
     <Compile Include="GeminiAPI.aspx.designer.cs">
       <DependentUpon>GeminiAPI.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="KhuVucThoTu.aspx.cs">
+      <DependentUpon>KhuVucThoTu.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="KhuVucThoTu.aspx.designer.cs">
+      <DependentUpon>KhuVucThoTu.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LichSu.aspx.cs">
+      <DependentUpon>LichSu.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LichSu.aspx.designer.cs">
+      <DependentUpon>LichSu.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NghiLe.aspx.cs">
+      <DependentUpon>NghiLe.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NghiLe.aspx.designer.cs">
+      <DependentUpon>NghiLe.aspx</DependentUpon>
     </Compile>
     <Compile Include="Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>
