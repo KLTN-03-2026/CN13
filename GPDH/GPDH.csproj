@@ -70,6 +70,7 @@
     <Content Include="DangXuat.aspx" />
     <Content Include="DoiMatKhau.aspx" />
     <Content Include="GeminiAPI.aspx" />
+    <Content Include="HoiDongGiaToc.aspx" />
     <Content Include="KhuVucThoTu.aspx" />
     <Content Include="LichSu.aspx" />
     <Content Include="NghiLe.aspx" />
@@ -123,6 +124,13 @@
     </Compile>
     <Compile Include="GeminiAPI.aspx.designer.cs">
       <DependentUpon>GeminiAPI.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HoiDongGiaToc.aspx.cs">
+      <DependentUpon>HoiDongGiaToc.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HoiDongGiaToc.aspx.designer.cs">
+      <DependentUpon>HoiDongGiaToc.aspx</DependentUpon>
     </Compile>
     <Compile Include="KhuVucThoTu.aspx.cs">
       <DependentUpon>KhuVucThoTu.aspx</DependentUpon>
