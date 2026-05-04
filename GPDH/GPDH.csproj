@@ -65,6 +65,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="CayGiaPha.aspx" />
+    <Content Include="ChinhSuaThanhVien.aspx" />
     <Content Include="ChinhSuaThongTin.aspx" />
     <Content Include="DangNhap.aspx" />
     <Content Include="DangXuat.aspx" />
@@ -89,6 +90,13 @@
     </Compile>
     <Compile Include="CayGiaPha.aspx.designer.cs">
       <DependentUpon>CayGiaPha.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ChinhSuaThanhVien.aspx.cs">
+      <DependentUpon>ChinhSuaThanhVien.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ChinhSuaThanhVien.aspx.designer.cs">
+      <DependentUpon>ChinhSuaThanhVien.aspx</DependentUpon>
     </Compile>
     <Compile Include="ChinhSuaThongTin.aspx.cs">
       <DependentUpon>ChinhSuaThongTin.aspx</DependentUpon>
