@@ -71,6 +71,7 @@
     <Content Include="DangXuat.aspx" />
     <Content Include="DoiMatKhau.aspx" />
     <Content Include="GeminiAPI.aspx" />
+    <Content Include="GopY.aspx" />
     <Content Include="HoiDongGiaToc.aspx" />
     <Content Include="KhuVucThoTu.aspx" />
     <Content Include="KichHoatThanhVien.aspx" />
@@ -80,6 +81,7 @@
     <Content Include="QuanLyLichSu.aspx" />
     <Content Include="QuanLyNghiLe.aspx" />
     <Content Include="ThemThanhVien.aspx" />
+    <Content Include="ThongKe.aspx" />
     <Content Include="ThongTinCaNhan.aspx" />
     <Content Include="TimKiem.aspx" />
     <Content Include="TrangChu.aspx" />
@@ -138,6 +140,13 @@
     </Compile>
     <Compile Include="GeminiAPI.aspx.designer.cs">
       <DependentUpon>GeminiAPI.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GopY.aspx.cs">
+      <DependentUpon>GopY.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GopY.aspx.designer.cs">
+      <DependentUpon>GopY.aspx</DependentUpon>
     </Compile>
     <Compile Include="HoiDongGiaToc.aspx.cs">
       <DependentUpon>HoiDongGiaToc.aspx</DependentUpon>
@@ -208,6 +217,13 @@
     </Compile>
     <Compile Include="ThemThanhVien.aspx.designer.cs">
       <DependentUpon>ThemThanhVien.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ThongKe.aspx.cs">
+      <DependentUpon>ThongKe.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ThongKe.aspx.designer.cs">
+      <DependentUpon>ThongKe.aspx</DependentUpon>
     </Compile>
     <Compile Include="ThongTinCaNhan.aspx.cs">
       <DependentUpon>ThongTinCaNhan.aspx</DependentUpon>
