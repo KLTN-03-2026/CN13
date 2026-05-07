@@ -77,6 +77,8 @@
     <Content Include="LichSu.aspx" />
     <Content Include="NghiLe.aspx" />
     <Content Include="QuanLyKhuVucThoTu.aspx" />
+    <Content Include="QuanLyLichSu.aspx" />
+    <Content Include="QuanLyNghiLe.aspx" />
     <Content Include="ThemThanhVien.aspx" />
     <Content Include="ThongTinCaNhan.aspx" />
     <Content Include="TimKiem.aspx" />
@@ -178,6 +180,20 @@
     </Compile>
     <Compile Include="QuanLyKhuVucThoTu.aspx.designer.cs">
       <DependentUpon>QuanLyKhuVucThoTu.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="QuanLyLichSu.aspx.cs">
+      <DependentUpon>QuanLyLichSu.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="QuanLyLichSu.aspx.designer.cs">
+      <DependentUpon>QuanLyLichSu.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="QuanLyNghiLe.aspx.cs">
+      <DependentUpon>QuanLyNghiLe.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="QuanLyNghiLe.aspx.designer.cs">
+      <DependentUpon>QuanLyNghiLe.aspx</DependentUpon>
     </Compile>
     <Compile Include="Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>
